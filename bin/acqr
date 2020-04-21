@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -ue -o pipefail
+
+cd `dirname $0`
+cd ..
+TS_NODE_FILES=true node -r ts-node/register index.ts "$@"

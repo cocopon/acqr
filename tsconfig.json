@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"es2015"
+		],
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"target": "es5",
+		"typeRoots": [
+			"./node_modules/@types",
+			"./lib",
+		]
+	}
+}
+
