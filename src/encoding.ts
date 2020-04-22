@@ -20,8 +20,8 @@ function rgbaHexFromColorIndex(colorIndex: number, quant: Quantizer.Result): Rgb
 		return RgbaColor.HEX_TRANSPARENT;
 	}
 
-	const comps = RgbColor.hexToComponents(systemHex);
-	return RgbaColor.componentsToHex([
+	const comps = RgbColor.componentsFromHex(systemHex);
+	return RgbaColor.hexFromComponents([
 		comps[0],
 		comps[1],
 		comps[2],

@@ -1,7 +1,7 @@
 export type Components = [number, number, number];
 export type Hex = number;
 
-export function hexToComponents(hex: number): Components {
+export function componentsFromHex(hex: number): Components {
 	return [
 		(hex & 0xff0000) >>> 16,
 		(hex & 0x00ff00) >>>  8,
@@ -9,7 +9,7 @@ export function hexToComponents(hex: number): Components {
 	];
 }
 
-export function componentsToHex(comps: Components): Hex {
+export function hexFromComponents(comps: Components): Hex {
 	return (
 		((comps[0] & 0xff) << 16) |
 		((comps[1] & 0xff) << 8)  |

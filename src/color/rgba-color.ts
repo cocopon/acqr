@@ -3,7 +3,7 @@ export type Hex = number;
 
 export const HEX_TRANSPARENT = 0x00000000;
 
-export function hexToComponents(hex: number): Components {
+export function componentsFromHex(hex: number): Components {
 	return [
 		(hex & 0xff000000) >>> 24,
 		(hex & 0x00ff0000) >>> 16,
@@ -12,7 +12,7 @@ export function hexToComponents(hex: number): Components {
 	];
 }
 
-export function componentsToHex(comps: Components): Hex {
+export function hexFromComponents(comps: Components): Hex {
 	return (
 		((comps[0] & 0xff) << 24) |
 		((comps[1] & 0xff) << 16) |

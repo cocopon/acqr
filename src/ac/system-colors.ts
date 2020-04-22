@@ -103,13 +103,13 @@ export function getNearestColorId(rgbHex: RgbColor.Hex): number {
 	let minDist = Number.MAX_VALUE;
 	let result = -1;
 
-	const rgbComps = RgbColor.hexToComponents(rgbHex);
+	const rgbComps = RgbColor.componentsFromHex(rgbHex);
 	COLOR_TABLE.forEach((palHex, id) => {
 		if (palHex === null) {
 			return;
 		}
 
-		const palComps = RgbColor.hexToComponents(palHex);
+		const palComps = RgbColor.componentsFromHex(palHex);
 		const dist = RgbColor.getDistance(rgbComps, palComps);
 		if (dist < minDist) {
 			result = id;

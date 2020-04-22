@@ -18,12 +18,12 @@ export function isOpaque(alpha: number): boolean {
 
 function extractOpaqueColors(rgbaHexes: RgbaColor.Hex[]): RgbColor.Hex[] {
 	const opaqueHexes = rgbaHexes.filter((rgbaHex) => {
-		const comps = RgbaColor.hexToComponents(rgbaHex);
+		const comps = RgbaColor.componentsFromHex(rgbaHex);
 		return isOpaque(comps[3]);
 	});
 	return opaqueHexes.map((rgbaHex) => {
-		const comps = RgbaColor.hexToComponents(rgbaHex);
-		return RgbColor.componentsToHex([
+		const comps = RgbaColor.componentsFromHex(rgbaHex);
+		return RgbColor.hexFromComponents([
 			comps[0],
 			comps[1],
 			comps[2],
@@ -51,14 +51,14 @@ export function quantize(rgbaHexes: RgbaColor.Hex[]): Result {
 	// Quantize
 	const opaqueHexes = extractOpaqueColors(rgbaHexes);
 	const colMap = Quantize(
-		opaqueHexes.map(RgbColor.hexToComponents),
+		opaqueHexes.map(RgbColor.componentsFromHex),
 		16,
 	);
 
 	// Convert pixels into color indexes
 	const palette: RgbColor.Components[] = colMap.palette();
 	const colIndexes = rgbaHexes.map((rgbaHex) => {
-		const rgbaComps = RgbaColor.hexToComponents(rgbaHex);
+		const rgbaComps = RgbaColor.componentsFromHex(rgbaHex);
 		const rgbComps: RgbColor.Components = [
 			rgbaComps[0],
 			rgbaComps[1],
@@ -74,6 +74,6 @@ export function quantize(rgbaHexes: RgbaColor.Hex[]): Result {
 
 	return {
 		image: colIndexes,
-		palette: palette.map(RgbColor.componentsToHex),
+		palette: palette.map(RgbColor.hexFromComponents),
 	};
 }
