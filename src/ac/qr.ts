@@ -55,15 +55,16 @@ export function encode(
 		data[p++] = id;
 	});
 
-	// Separator?
-	const DATA_SEPARATOR = [
-		0xcc, 0x0a,
+	// Misc
+	[
+		// ???
+		0x00, 0x00,
 		// Type
 		// 0x09: Normal
 		0x09,
+		// 0x0000
 		0x00, 0x00,
-	];
-	DATA_SEPARATOR.forEach((b) => {
+	].forEach((b) => {
 		data[p++] = b;
 	});
 
