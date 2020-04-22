@@ -37,14 +37,19 @@ if (process.argv.length <= 2) {
 }
 
 Commander
-	.requiredOption('-i, --input <path>')
-	.requiredOption('-o, --output <path>')
-	.option('-t, --title <value>', '', 'Untitled')
-	.option('-a, --author <value>', '', 'Anonymous')
+	.option('-o, --output <path>', undefined, 'out.png')
+	.option('-t, --title <value>', undefined, 'Untitled')
+	.option('-a, --author <value>', undefined, 'Anonymous')
 	.option('--town <value>', '', 'Unknown')
 	.action(async (opts) => {
+		const input = opts.args[0];
+		if (!input) {
+			Commander.outputHelp();
+			process.exit(0);
+		}
+
 		await encode({
-			input: opts.input,
+			input: input,
 			title: opts.title,
 			author: opts.author,
 			town: opts.town,
