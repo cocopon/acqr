@@ -5,7 +5,7 @@ import * as RgbaColor from '../color/rgba';
 
 type ColorIndex = number;
 
-export const COLOR_INDEX_TRANSPARENT = 0x10;
+export const COLOR_INDEX_TRANSPARENT = 0xf;
 
 export interface Result {
 	image: ColorIndex[];
