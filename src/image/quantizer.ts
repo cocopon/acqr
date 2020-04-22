@@ -1,7 +1,7 @@
 import * as Quantize from 'quantize';
 
-import * as RgbColor from '../color/rgb-color';
-import * as RgbaColor from '../color/rgba-color';
+import * as RgbColor from '../color/rgb';
+import * as RgbaColor from '../color/rgba';
 
 type ColorIndex = number;
 

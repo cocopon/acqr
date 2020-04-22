@@ -1,6 +1,6 @@
 import * as Jimp from 'jimp';
 
-import * as RgbaColor from '../color/rgba-color';
+import * as RgbaColor from '../color/rgba';
 
 const IMAGE_SIZE = 32;
 

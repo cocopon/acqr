@@ -3,9 +3,10 @@
   "version": "0.1.2",
   "description": "QR code generator for Animal Crossing",
   "scripts": {
+		"prepublish": "npm run build",
+		"test": "mocha --require ts-node/register 'src/**/*-test.ts'",
     "build": "tsc",
-    "dev": "npm run build && ./bin/acqr",
-    "prepublish": "npm run build"
+    "dev": "npm run build && ./bin/acqr"
   },
   "author": "cocopon",
   "license": "MIT",
@@ -19,9 +20,14 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
+    "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-simple-import-sort": "^5.0.2"
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "mocha": "^7.1.1",
+    "ts-node": "^8.9.0"
   }
 }

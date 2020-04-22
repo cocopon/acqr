@@ -2,8 +2,8 @@ import * as Qrcode from 'qrcode';
 
 import * as AcQr from './ac/qr';
 import * as AcSystemColors from './ac/system-colors';
-import * as RgbColor from './color/rgb-color';
-import * as RgbaColor from './color/rgba-color';
+import * as RgbColor from './color/rgb';
+import * as RgbaColor from './color/rgba';
 import * as ImageIo from './image/io';
 import * as Quantizer from './image/quantizer';
 

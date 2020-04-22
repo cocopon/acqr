@@ -1,4 +1,4 @@
-import * as RgbColor from '../color/rgb-color';
+import * as RgbColor from '../color/rgb';
 
 const COLOR_TABLE: (RgbColor.Hex | null)[] = [
 	// 00
