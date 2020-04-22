@@ -4,12 +4,11 @@
 ## Setup
 
 ```
-$ cd path/to/acqr
-$ npm install
+$ npm install -g @cocopon/acqr
 ```
 
 ## Usage
 
 ```
-$ ./bin/acqr in.png
+$ acqr in.png -o out.png
 ```
