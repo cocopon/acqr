@@ -1,6 +1,6 @@
 {
   "name": "@cocopon/acqr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "QR code generator for Animal Crossing",
   "scripts": {
     "build": "tsc",
