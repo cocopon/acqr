@@ -11,5 +11,5 @@ $ npm install
 ## Usage
 
 ```
-$ ./bin/acqr -i in.png -t 'Title' -a 'Author' -o out.png
+$ ./bin/acqr in.png
 ```
