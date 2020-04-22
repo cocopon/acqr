@@ -19,3 +19,13 @@ export async function read(path: string): Promise<RgbaColor.Hex[]> {
 	}
 	return rgbaHexes;
 }
+
+export async function write(path: string, rgbaHexes: RgbaColor.Hex[]) {
+	const img = await new Jimp(IMAGE_SIZE, IMAGE_SIZE);
+	for (let y = 0; y < IMAGE_SIZE; y++) {
+		for (let x = 0; x < IMAGE_SIZE; x++) {
+			img.setPixelColor(rgbaHexes[y * IMAGE_SIZE + x], x, y);
+		}
+	}
+	await img.write(path);
+}

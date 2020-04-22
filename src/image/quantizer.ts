@@ -5,14 +5,14 @@ import * as RgbaColor from '../color/rgba-color';
 
 type ColorIndex = number;
 
-const COLOR_INDEX_TRANSPARENT = 0xf;
+export const COLOR_INDEX_TRANSPARENT = 0x10;
 
-interface QuantizationResult {
+export interface Result {
 	image: ColorIndex[];
 	palette: RgbColor.Hex[];
 }
 
-function isOpaque(alpha: number): boolean {
+export function isOpaque(alpha: number): boolean {
 	return alpha > 0;
 }
 
@@ -47,7 +47,7 @@ function getNearestColorIndex(colMap: any, palette: RgbColor.Components[], rgbCo
 	return result;
 }
 
-export function quantize(rgbaHexes: RgbaColor.Hex[]): QuantizationResult {
+export function quantize(rgbaHexes: RgbaColor.Hex[]): Result {
 	// Quantize
 	const opaqueHexes = extractOpaqueColors(rgbaHexes);
 	const colMap = Quantize(

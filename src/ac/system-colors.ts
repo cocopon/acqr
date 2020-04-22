@@ -1,6 +1,6 @@
 import * as RgbColor from '../color/rgb-color';
 
-const COLOR_TABLE: (number | null)[] = [
+const COLOR_TABLE: (RgbColor.Hex | null)[] = [
 	// 00
 	0xffeeff, 0xff99aa, 0xee5599,
 	0xff66aa, 0xff0066, 0xbb4477,
@@ -118,4 +118,8 @@ export function getNearestColorId(rgbHex: RgbColor.Hex): number {
 	});
 
 	return result;
+}
+
+export function getColor(colorId: number): RgbColor.Hex | null {
+	return COLOR_TABLE[colorId];
 }

@@ -1,6 +1,6 @@
 import * as Commander from 'commander';
 
-import * as Encoder from './encoder';
+import * as Encoding from './encoding';
 
 export function main() {
 	if (process.argv.length <= 2) {
@@ -9,10 +9,11 @@ export function main() {
 	}
 
 	Commander
+		.option('-a, --author <value>', undefined, 'Anonymous')
 		.option('-o, --output <path>', undefined, 'out.png')
 		.option('-t, --title <value>', undefined, 'Untitled')
-		.option('-a, --author <value>', undefined, 'Anonymous')
-		.option('--town <value>', '', 'Unknown')
+		.option('--preview <path>')
+		.option('--town <value>', undefined, 'Unknown')
 		.action(async (opts) => {
 			const input = opts.args[0];
 			if (!input) {
@@ -20,12 +21,13 @@ export function main() {
 				process.exit(0);
 			}
 
-			await Encoder.encode({
+			await Encoding.encode({
 				input: input,
 				title: opts.title,
 				author: opts.author,
 				town: opts.town,
 				output: opts.output,
+				preview: opts.preview,
 			});
 		})
 		.parse(process.argv);

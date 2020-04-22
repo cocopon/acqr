@@ -1,6 +1,8 @@
 export type Components = [number, number, number, number];
 export type Hex = number;
 
+export const HEX_TRANSPARENT = 0x00000000;
+
 export function hexToComponents(hex: number): Components {
 	return [
 		(hex & 0xff000000) >>> 24,
