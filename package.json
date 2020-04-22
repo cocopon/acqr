@@ -2,7 +2,11 @@
   "name": "@cocopon/acqr",
   "version": "0.1.0",
   "description": "QR code generator for Animal Crossing",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "dev": "npm run build && ./bin/acqr",
+    "prepublish": "npm run build"
+  },
   "author": "cocopon",
   "license": "MIT",
   "bin": "./bin/acqr",
@@ -12,7 +16,6 @@
     "jimp": "^0.10.2",
     "qrcode": "^1.4.4",
     "quantize": "^1.0.2",
-    "ts-node": "^8.8.2",
     "typescript": "^3.8.3"
   },
   "devDependencies": {

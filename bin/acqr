@@ -1,7 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-set -ue -o pipefail
-
-cd `dirname $0`
-cd ..
-TS_NODE_FILES=true node -r ts-node/register index.ts "$@"
+require('../lib/index').main();
