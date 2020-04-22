@@ -1,12 +1,11 @@
 {
-  "name": "acqr",
+  "name": "@cocopon/acqr",
   "version": "0.1.0",
   "description": "QR code generator for Animal Crossing",
   "scripts": {},
   "author": "cocopon",
-	"license": "MIT",
-	"private": true,
-	"bin": "./bin/acqr",
+  "license": "MIT",
+  "bin": "./bin/acqr",
   "dependencies": {
     "@types/qrcode": "^1.3.4",
     "commander": "^5.0.0",
